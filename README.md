@@ -1,25 +1,55 @@
-# RealEstatePricePred
+🏠 Real Estate Price Predictor
 
-A simple web app to predict Bangalore home prices using a machine learning model.
+A simple web app that predicts Bangalore house prices based on location, square footage, BHK, and bathrooms. Built with Flask, scikit-learn, and served using Nginx on an AWS EC2 instance.
 
-## 🔗 Demo
+🔧 Tech Stack
 
-Live here:  
-[http://ec2-65-0-98-69.ap-south-1.compute.amazonaws.com/app.html](http://ec2-65-0-98-69.ap-south-1.compute.amazonaws.com/app.html)
+Backend: Python, Flask, scikit-learn
 
-## ⚙️ Tech Stack
+Frontend: HTML, CSS, JavaScript
 
-- Python 3.12  
-- Flask  
-- scikit-learn  
-- HTML, CSS, JavaScript  
-- Nginx on Ubuntu EC2  
+Deployment: Nginx on Ubuntu (EC2)
 
-## 🚀 How to Run
+🚀 Features
 
-### 1. Clone the Repository
+Predicts house prices using a trained Linear Regression model
 
-```bash
+REST API with:
+
+GET /api/get_location_names
+
+POST /api/predict_home_price
+
+Responsive frontend to input values and view predicted price
+
+🛠 Setup Instructions
+
+Clone this repo
+
 git clone https://github.com/mangalaworks/RealEstatePricePred.git
 cd RealEstatePricePred
+
+Set up Python environment
+
+cd server
+python3 -m venv venv --system-site-packages
+source venv/bin/activate
+pip install -r requirements.txt
+
+Run the server
+
+python server.py
+
+Access the app
+
+Go to: http://<your-EC2-public-IP>/app.html
+
+Example: http://ec2-65-0-98-69.ap-south-1.compute.amazonaws.com/app.html
+
+📁 Folder Structure
+
+bhp_app/
+├── client/      # Frontend files (HTML/CSS/JS)
+├── model/       # Trained ML model and Jupyter notebook
+├── server/      # Flask API code and requirements
 
